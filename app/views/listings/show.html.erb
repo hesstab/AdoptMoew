@@ -1,0 +1,21 @@
+<h2><%= @listing.name %></h2>
+
+<%= image_tag @listing.image, :class => 'feature'%>
+
+<ul>
+  <li>Age: <%= @listing.age %></li>
+  <li>Gender: <%= @listing.gender %></li>
+  <li>Breed: <%= @listing.breed %></li>
+  <li>Color: <%= @listing.color %></li>
+  <li>Microchipped: <%= @listing.microchipped %></li>
+  <li>Desexed: <%= @listing.desexed %></li>
+  <li>Owner: <%= link_to @listing.user.name, user_path(@listing.user) %></li>
+</ul>
+
+<div class="controls">
+  <% if @current_user.id == @listing.user_id %>
+    <%= link_to 'Edit listing', edit_listing_path %>
+  <% else %>
+    <%= link_to 'Adopt Me' %>
+  <% end %>
+</div>
