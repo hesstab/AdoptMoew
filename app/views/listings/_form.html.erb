@@ -1,0 +1,21 @@
+<%= form_for @listing do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name, :required => true %>
+
+  <%= f.label :age %>
+  <%= f.number_field :age, :required => true %>
+
+  <%= f.label :gender %>
+  <%= f.select :gender, ['Male', 'Female'], :include_blank => true %>
+
+  <%= f.label :breed %>
+  <%= f.text_field :breed %>
+
+  <%= f.label :color %>
+  <%= f.text_field :color %>
+
+  <%= f.label "Images" %>
+  <%= f.file_field :photo %>
+
+  <%= f.submit %>
+<% end %>

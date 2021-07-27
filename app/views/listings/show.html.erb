@@ -1,6 +1,6 @@
 <h2><%= @listing.name %></h2>
 
-<%= image_tag @listing.image, :class => 'feature'%>
+<%= image_tag @listing.photo, :class => 'feature' if @listing.photo.attached?%>
 
 <ul>
   <li>Age: <%= @listing.age %></li>
@@ -14,8 +14,12 @@
 
 <div class="controls">
   <% if @current_user.id == @listing.user_id %>
-    <%= link_to 'Edit listing', edit_listing_path %>
+    <%= link_to 'Edit cat', edit_listing_path %>
   <% else %>
     <%= link_to 'Adopt Me' %>
+  <% end %>
+
+  <% if @current_user.id == @listing.user_id %>
+    <%= link_to 'Remove cat', @listing, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
   <% end %>
 </div>

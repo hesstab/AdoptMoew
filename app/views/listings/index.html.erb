@@ -4,7 +4,7 @@
    <% @listings.each do |listing| %>
     <ul class="listings-list">
       <li><%= link_to listing.name, listing_path(listing) %></li>
-      <li><%= link_to (image_tag listing.image, :class => 'thumb'), listing_path(listing) %></li>
+      <li><%= link_to (image_tag listing.photo, :class => 'thumb'), listing_path(listing) if listing.photo.attached? %></li>
       <li>Age: <%= listing.age %></li>
       <li>Gender: <%= listing.gender %></li>
       <li>Breed: <%= listing.breed %></li>
