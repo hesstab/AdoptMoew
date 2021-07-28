@@ -33,3 +33,7 @@ body{
 .listings-list {
   list-style-type: none;
 }
+
+.cat-info-lists li {
+  margin-bottom: 15px;
+}
