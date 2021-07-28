@@ -14,6 +14,12 @@
   <%= f.label :color %>
   <%= f.text_field :color %>
 
+  <%= f.label :microchipped %>
+  <%= f.select :microchipped, [['Yes', true], ['No', false]], :include_blank => true %>
+
+  <%= f.label :desexed %>
+  <%= f.select :desexed, [['Yes', true], ['No', false]], :include_blank => true %>
+
   <%= f.label "Images" %>
   <%= f.file_field :photo %>
 

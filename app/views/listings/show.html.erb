@@ -2,13 +2,13 @@
 
 <%= image_tag @listing.photo, :class => 'feature' if @listing.photo.attached?%>
 
-<ul>
+<ul class="cat-info-lists">
   <li>Age: <%= @listing.age %></li>
   <li>Gender: <%= @listing.gender %></li>
   <li>Breed: <%= @listing.breed %></li>
   <li>Color: <%= @listing.color %></li>
-  <li>Microchipped: <%= @listing.microchipped %></li>
-  <li>Desexed: <%= @listing.desexed %></li>
+  <li>Microchipped: <% if @listing.microchipped %>&#9989;<% end %></li>
+  <li>Desexed: <% if @listing.desexed %>&#9989;<% end %></li>
   <li>Owner: <%= link_to @listing.user.name, user_path(@listing.user) %></li>
 </ul>
 
