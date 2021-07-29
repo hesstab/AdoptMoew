@@ -1,18 +1,24 @@
-<h2><%= @user.name %>'s Profile</h2>
+<main class="user-profile">
 
-<%= image_tag @user.avatar, :width => 200 if @user.avatar.attached? %>
+  <div class="user-profile-head">
+    <h2><%= @user.name %>'s Profile</h2>
 
-<h5><%= @user.email %></h5>
+    <%= image_tag @user.avatar, :width => 200 if @user.avatar.attached? %>
 
-<p>Cats listed by <%= @user.name %>:</p>
-<% @user.listings.each do |listing| %>
-  <ul>
-    <li><%= link_to listing.name, listing_path(listing) %></li>
-  </ul>
-<% end %>
+    <h5><%= @user.email %></h5>
+  </div>
 
-<% if @user.listings.present? %>
-  <%= link_to 'List another cat for adoption', new_listing_path(@listing) %>
-<% else %>
-  <%= link_to 'List a cat for adoption', new_listing_path(@listing) %>
-<% end %>
+  <p>Cats listed by <%= @user.name %>:</p>
+  <% @user.listings.each do |listing| %>
+    <ul>
+      <li><%= link_to listing.name, listing_path(listing) %></li>
+    </ul>
+  <% end %>
+
+  <% if @user.listings.present? %>
+    <%= link_to 'List another cat for adoption', new_listing_path(@listing) %>
+  <% else %>
+    <%= link_to 'List a cat for adoption', new_listing_path(@listing) %>
+  <% end %>
+
+</main>

@@ -1,16 +1,26 @@
-<h2>Edit profile</h2>
+<main class="form-signin">
 
-<%= form_for @user do |f| %>
-<%= f.label :name %>
-<%= f.text_field :name %>
+  <h2 class="h3 mb-3 fw-normal">Edit profile</h2>
 
-<%= f.label :age %>
-<%= f.number_field :age %>
+  <%= form_for @user do |f| %>
 
-<%= f.label "Profile picture" %>
-<%= f.file_field :avatar %>
 
-<%= f.submit %>
+      <div class="form-floating">
+        <%= f.label "Full name" %>
+        <%= f.text_field :name, :class => 'form-control' %>
+      </div>
 
-<%= link_to 'Delete profile', @user, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
-<% end %>
+      <div class="form-floating">
+          <%= f.label :age %>
+          <%= f.number_field :age, :class => 'form-control' %>
+      </div>
+
+      <div class="form-floating">
+        <%= f.label "Profile photo" %>
+        <%= f.file_field :avatar, :class => 'form-control'%>
+      </div>
+
+    <%= f.submit "Update profile", :class => 'btn btn-success', :id => 'update-btn' %>
+
+    <%= link_to 'Delete profile', @user, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
+    <% end %>
