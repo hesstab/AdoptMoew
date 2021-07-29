@@ -1,22 +1,29 @@
 <h2><%= @listing.name %></h2>
 
-<%= image_tag @listing.photo, :class => 'feature' if @listing.photo.attached?%>
+<div class="card">
 
-<ul class="cat-info-lists">
-  <li>Age: <%= @listing.age %></li>
-  <li>Gender: <%= @listing.gender %></li>
-  <li>Breed: <%= @listing.breed %></li>
-  <li>Color: <%= @listing.color %></li>
-  <li>Microchipped: <% if @listing.microchipped %>&#9989;<% end %></li>
-  <li>Desexed: <% if @listing.desexed %>&#9989;<% end %></li>
-  <li>Owner: <%= link_to @listing.user.name, user_path(@listing.user) %></li>
-</ul>
+  <%= image_tag @listing.photo, :class => 'feature' if @listing.photo.attached?%>
+
+  <div class="card-body">
+    <ul class="cat-info-lists">
+      <% if @listing.age.present? %>
+        <li>Age: <%= @listing.age %> months</li>
+      <% end %>
+      <li>Gender: <%= @listing.gender %></li>
+      <li>Breed: <%= @listing.breed %></li>
+      <li>Color: <%= @listing.color %></li>
+      <li>Microchipped: <% if @listing.microchipped %>&#9989;<% end %></li>
+      <li>Desexed: <% if @listing.desexed %>&#9989;<% end %></li>
+      <li>Owner: <%= link_to @listing.user.name, user_path(@listing.user) %></li>
+    </ul>
+  </div>
+</div>
 
 <div class="controls">
   <% if @current_user.id == @listing.user_id %>
     <%= link_to 'Edit cat', edit_listing_path %>
   <% else %>
-    <%= link_to 'Adopt Me', conversations_path %>
+    <%= link_to 'Contact my owner', conversations_path %>
   <% end %>
 
   <% if @current_user.id == @listing.user_id %>

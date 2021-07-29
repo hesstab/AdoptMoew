@@ -1,6 +1,10 @@
 class ListingsController < ApplicationController
   def index
-    @listings = Listing.all
+    if @current_user.present?
+      @listings = Listing.all
+    else
+      redirect_to login_path
+    end
   end
 
   def new

@@ -1,4 +1,3 @@
-<% if @current_user.present? %>
 
    <% @listings.each do |listing| %>
 
@@ -6,10 +5,14 @@
        <div class="card-top">
              <%= link_to listing.name, listing_path(listing) %>
        </div>
+
         <%= link_to (image_tag listing.photo, :class => 'card-img-top'), listing_path(listing) if listing.photo.attached? %>
-        <div class="card-body">
+
+        <div class="card-body" id="listings-card-body">
           <ul class="listings-list">
-            <li>Age: <%= listing.age %></li>
+            <% if listing.age.present? %>
+              <li>Age: <%= listing.age %> months</li>
+            <% end %>
             <li>Gender: <%= listing.gender %></li>
             <li>Breed: <%= listing.breed %></li>
           </ul>
@@ -17,6 +20,3 @@
      </div>
 
    <% end %>
-<% else %>
-  <p>You are not Logged in!</p>
-<% end %>

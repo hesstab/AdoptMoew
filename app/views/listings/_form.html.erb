@@ -3,7 +3,7 @@
   <%= f.text_field :name, :required => true %>
 
   <%= f.label :age %>
-  <%= f.number_field :age, :required => true %>
+  <%= f.number_field :age, :placeholder => 'age in months' %>
 
   <%= f.label :gender %>
   <%= f.select :gender, ['Male', 'Female'], :include_blank => true %>
