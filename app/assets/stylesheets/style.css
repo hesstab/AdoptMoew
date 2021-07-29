@@ -1,6 +1,6 @@
 body{
 	background-color: #fafafa;
-	padding: 60px;
+	padding: 0px;
 	font-family: 'Droid Sans', sans-serif;
 }
 
@@ -36,4 +36,19 @@ body{
 
 .cat-info-lists li {
   margin-bottom: 15px;
+}
+
+.collapse-navbar-collapse {
+	justify-content: flex-end;
+}
+
+.form-signin {
+  width: 100%;
+  max-width: 330px;
+  padding: 15px;
+  margin: auto;
+}
+
+.form-control {
+	margin-bottom: 20px;
 }

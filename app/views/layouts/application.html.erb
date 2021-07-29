@@ -4,28 +4,75 @@
     <title>AdoptMeApp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <div class="container">
-      <nav>
-        <%= link_to 'Home', root_path %>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
         <% if @current_user.present? %>
-          <% if @current_user.admin? %>
-          <%= link_to "User's emails list", users_path %>
-          <% end %>
-          <%= link_to "Log Out #{ @current_user.email }", login_path, :method => 'delete' %>
-          |
-          <%= link_to "My profile", user_path(@current_user) %>
-          <%= link_to "Edit profile", edit_user_path(@current_user) %>
+
+          <div class="container-fluid">
+            <a class="navbar-brand" href="/">AdoptMeow</a> <!-- AdoptMe app logo -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+          <div class="collapse-navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">
+                  <i class="bi bi-house-door" style="font-size: 1.5rem"></i> <!-- Home icon -->
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/conversations">
+                  <i class="bi bi-chat-dots" style="font-size: 1.5rem" ></i> <!-- Message icon -->
+                </a>
+              </li>
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <i class="bi bi-person-circle" style="font-size: 1.5rem"></i> <!-- Profile icon - Dropdown -->
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li><%= link_to "My profile", user_path(@current_user), :class => 'dropdown-item' %></li>
+                  <li><%= link_to "Edit profile", edit_user_path(@current_user), :class => 'dropdown-item' %></li>
+                  <% if @current_user.admin? %>
+                  <li><%= link_to "User's emails list", users_path, :class => 'dropdown-item' %></li>
+                  <% end %>
+                  <li><hr class="dropdown-divider"></li>
+                  <li><%= link_to "Log out #{ @current_user.email }", login_path, :class => 'dropdown-item', :method => 'delete' %></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+          </div>
+
         <% else %>
-          <%= link_to 'Sign up', new_user_path %>
-          <%= link_to 'Log In', login_path %>
+
+          <div class="container-fluid">
+
+            <a class="navbar-brand" href="/">AdoptMeow</a> <!-- AdoptMe app logo -->
+          <div class="collapse-navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <%= link_to 'Sign up', new_user_path, :class => 'nav-link' %> <!-- Sign up -->
+              </li>
+              <li class="nav-item">
+                <%= link_to 'Log in', login_path, :class => 'nav-link' %> <!-- Sign in -->
+              </li>
+            </ul>
+          </div>
+
+          </div>
+
         <% end %>
       </nav>
+
       <%= yield %>
     </div>
   </body>
