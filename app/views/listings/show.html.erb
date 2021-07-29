@@ -16,7 +16,7 @@
   <% if @current_user.id == @listing.user_id %>
     <%= link_to 'Edit cat', edit_listing_path %>
   <% else %>
-    <%= link_to 'Adopt Me' %>
+    <%= link_to 'Adopt Me', conversations_path %>
   <% end %>
 
   <% if @current_user.id == @listing.user_id %>
