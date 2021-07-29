@@ -9,16 +9,6 @@ body{
   margin: 0 auto;
 }
 
-/* .listings-list {
-  background: #ffffff;
-	border: 1px solid #f2f2f2;
-	border-radius: 3px;
-	max-width: 614px;
-	margin: auto;
-  padding: 5px;
-  margin: 20px 0;
-} */
-
 .thumb {
   width: 100%;
   vertical-align: middle;
@@ -27,6 +17,12 @@ body{
 .feature {
   width: 100%;
   vertical-align: middle;
+}
+
+.profile-pic {
+	width: 70%;
+  vertical-align: middle;
+	border-radius: 50%;
 }
 
 .listings-list {
@@ -41,6 +37,12 @@ body{
 	margin: 0;
 }
 
+.cat-list-user-profile {
+	list-style-type: none;
+	padding: 0;
+	margin-bottom: 80px;
+}
+
 .collapse-navbar-collapse {
 	justify-content: flex-end;
 }
@@ -50,6 +52,10 @@ body{
   max-width: 416px;
   padding: 15px;
   margin: auto;
+}
+
+.new-cat-heading {
+text-align: center;
 }
 
 .form-control {
@@ -62,7 +68,7 @@ body{
 
 .user-profile-head {
 	text-align: center;
-	margin-bottom: 50px;
+	margin-bottom: 40px;
 }
 
 #navbar-id {
@@ -88,6 +94,10 @@ body{
 
 .controls a {
 	padding: 5px;
+}
+
+#last-row-g-3 {
+	margin-bottom: 20px;
 }
 
 input[type=file]::file-selector-button {

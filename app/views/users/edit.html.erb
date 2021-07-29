@@ -4,7 +4,6 @@
 
   <%= form_for @user do |f| %>
 
-
       <div class="form-floating">
         <%= f.label "Full name" %>
         <%= f.text_field :name, :class => 'form-control' %>
@@ -20,7 +19,7 @@
         <%= f.file_field :avatar, :class => 'form-control'%>
       </div>
 
-    <%= f.submit "Update profile", :class => 'btn btn-success', :id => 'update-btn' %>
+    <%= f.submit "Update profile", :class => 'btn btn-secondary', :id => 'update-btn' %>
 
     <%= link_to 'Delete profile', @user, :method => 'delete', :data => { :confirm => 'Are you sure?' } %>
     <% end %>

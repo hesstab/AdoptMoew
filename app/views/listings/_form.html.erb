@@ -1,27 +1,47 @@
-<%= form_for @listing do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name, :required => true %>
+<main class="form-signin">
 
-  <%= f.label :age %>
-  <%= f.number_field :age, :placeholder => 'age in months' %>
+  <%= form_for @listing do |f| %>
+    <div class="form-floating">
+      <%= f.label :name %>
+      <%= f.text_field :name, :class => 'form-control', :required => true %>
+    </div>
 
-  <%= f.label :gender %>
-  <%= f.select :gender, ['Male', 'Female'], :include_blank => true %>
+    <div class="row g-3">
+      <div class="col-md-6">
+        <%= f.label :age, :class => 'form-label' %>
+        <%= f.number_field :age, :class => 'form-control' %>
+      </div>
+      <div class="col-md-6">
+        <%= f.label :breed %>
+        <%= f.text_field :breed, :class => 'form-control' %>
+      </div>
+    </div>
 
-  <%= f.label :breed %>
-  <%= f.text_field :breed %>
+      <div class="form-floating">
+        <%= f.label :color %>
+        <%= f.text_field :color, :class => 'form-control' %>
+      </div>
+    <div class="row g-3" id='last-row-g-3'>
+      <div class="col-md-4">
+        <%= f.label :gender, :class => 'form-label' %>
+        <%= f.select :gender, ['Male', 'Female'], :class => 'form-select', :include_blank => true %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :microchipped %>
+        <%= f.select :microchipped, [['Yes', true], ['No', false]], :class => 'form-select', :include_blank => true %>
+      </div>
+      <div class="col-md-4">
+        <%= f.label :desexed %>
+        <%= f.select :desexed, [['Yes', true], ['No', false]], :class => 'form-select', :include_blank => true %>
+      </div>
+    </div>
 
-  <%= f.label :color %>
-  <%= f.text_field :color %>
+    <div class="form-floating">
+    <%= f.label "Image" %>
+    <%= f.file_field :photo, :class => 'form-control' %>
+    </div>
 
-  <%= f.label :microchipped %>
-  <%= f.select :microchipped, [['Yes', true], ['No', false]], :include_blank => true %>
+    <%= f.submit :class => 'btn btn-secondary'%>
+  <% end %>
 
-  <%= f.label :desexed %>
-  <%= f.select :desexed, [['Yes', true], ['No', false]], :include_blank => true %>
-
-  <%= f.label "Images" %>
-  <%= f.file_field :photo %>
-
-  <%= f.submit %>
-<% end %>
+</main>

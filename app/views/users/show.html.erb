@@ -3,14 +3,14 @@
   <div class="user-profile-head">
     <h2><%= @user.name %>'s Profile</h2>
 
-    <%= image_tag @user.avatar, :width => 200 if @user.avatar.attached? %>
+    <%= image_tag @user.avatar, :class => 'profile-pic' if @user.avatar.attached? %>
 
     <h5><%= @user.email %></h5>
   </div>
 
   <p>Cats listed by <%= @user.name %>:</p>
   <% @user.listings.each do |listing| %>
-    <ul>
+    <ul class="cat-list-user-profile">
       <li><%= link_to listing.name, listing_path(listing) %></li>
     </ul>
   <% end %>
