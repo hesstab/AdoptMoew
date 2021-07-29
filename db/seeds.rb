@@ -10,7 +10,6 @@ l1 = Listing.create :name => 'Anshul', :age => 2, :gender => 'Female', :breed =>
 l2 = Listing.create :name => 'Pishul', :age => 1, :gender => 'Male', :breed => 'Ragdoll', :color => 'Drak gray', :image => 'http://imgur.com/O9n2213.jpg', :microchipped => true, :desexed => true
 puts "#{ Listing.count } listings"
 
-
 # Associations
 puts "Listings and Users"
 u1.listings << l1
