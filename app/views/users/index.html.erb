@@ -1,5 +1,17 @@
-<h2>List of Email Addresses </h2>
+<main class="user-profile">
 
-<% @users.each do |user| %>
-  <p><%= user.email %></p>
-<% end %>
+  <div class="card">
+
+    <div class="card-top">
+      <h2>List of Email Addresses</h2>
+    </div>
+
+    <div class="card-body">
+      <% @users.each do |user| %>
+      <p><%= user.email %></p>
+      <% end %>
+    </div>
+
+  </div>
+
+ </main>
