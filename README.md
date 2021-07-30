@@ -1,24 +1,31 @@
-# README
+# AdoptMeow: A platform for cat lovers to find cats for adoption
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Technologies that has been utilised for developing AdoptMeow are:
 
-Things you may want to cover:
+- Ruby on Rails
+- PostgreSQL
+- Active Storage
+- AWS S3
+- Heroku
 
-* Ruby version
+Try it here: [AdoptMeow site](https://adoptme-project-hessam.herokuapp.com/).
 
-* System dependencies
+## Usage
 
-* Configuration
+After creating an account and signing in, users get a chance to browse cats that have been listed by other users for adoption through getting in touch with the current owner of the cat via a simple in-app messaging system.
 
-* Database creation
+Each user has a profile that can go to, edit, and upload their photo, as well as a link to list a cat for adoption.
 
-* Database initialization
+## System dependencies:
 
-* How to run the test suite
+* Ruby version 2.7.4
+* PostgreSQL RDBMS
+* Heroku for deployment
 
-* Services (job queues, cache servers, search engines, etc.)
+## Services
 
-* Deployment instructions
+The app uses AWS S3 bucket as a cloud storage system for uploading/editing both users and cats photos.
 
-* ...
+## Deployment instructions:
+
+## Future development plans:
