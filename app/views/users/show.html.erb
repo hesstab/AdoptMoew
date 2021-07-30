@@ -18,9 +18,11 @@
       <% end %>
 
       <% if @user.listings.present? %>
-        <%= link_to 'List another cat for adoption', new_listing_path(@listing) %>
-      <% else %>
-        <%= link_to 'List a cat for adoption', new_listing_path(@listing) %>
+        <div class="link-to-create-cat">
+          <%= link_to 'List another cat for adoption', new_listing_path(@listing) %>
+          <% else %>
+          <%= link_to 'List a cat for adoption', new_listing_path(@listing) %>
+        </div>
       <% end %>
     </div>
   </div>

@@ -48,7 +48,10 @@ body{
 .cat-list-user-profile {
 	list-style-type: none;
 	padding: 0;
-	margin-bottom: 80px;
+}
+
+.link-to-create-cat {
+	margin-top: 80px;
 }
 
 .collapse-navbar-collapse {
