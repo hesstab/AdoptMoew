@@ -1,24 +1,28 @@
 <main class="user-profile">
 
-  <div class="user-profile-head">
-    <h2><%= @user.name %>'s Profile</h2>
+  <div class="card">
+    <div class="user-profile-head">
+      <h2><%= @user.name %>'s Profile</h2>
 
     <%= image_tag @user.avatar, :class => 'profile-pic' if @user.avatar.attached? %>
 
     <h5><%= @user.email %></h5>
+    </div>
+
+    <div class="card-body">
+      <p>Cats listed by <%= @user.name %>:</p>
+      <% @user.listings.each do |listing| %>
+        <ul class="cat-list-user-profile">
+          <li><%= link_to listing.name, listing_path(listing) %></li>
+        </ul>
+      <% end %>
+
+      <% if @user.listings.present? %>
+        <%= link_to 'List another cat for adoption', new_listing_path(@listing) %>
+      <% else %>
+        <%= link_to 'List a cat for adoption', new_listing_path(@listing) %>
+      <% end %>
+    </div>
   </div>
-
-  <p>Cats listed by <%= @user.name %>:</p>
-  <% @user.listings.each do |listing| %>
-    <ul class="cat-list-user-profile">
-      <li><%= link_to listing.name, listing_path(listing) %></li>
-    </ul>
-  <% end %>
-
-  <% if @user.listings.present? %>
-    <%= link_to 'List another cat for adoption', new_listing_path(@listing) %>
-  <% else %>
-    <%= link_to 'List a cat for adoption', new_listing_path(@listing) %>
-  <% end %>
 
 </main>

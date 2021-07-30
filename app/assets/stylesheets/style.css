@@ -19,12 +19,16 @@ body{
 }
 
 .feature {
-  width: 100%;
+	width: 568px;
+  height: 350px;
+  object-fit: cover;
   vertical-align: middle;
 }
 
 .profile-pic {
-	width: 70%;
+	width: 200px;
+	height: 200px;
+	object-fit: cover;
   vertical-align: middle;
 	border-radius: 50%;
 }
@@ -90,6 +94,12 @@ text-align: center;
 
 .card-body {
 	padding: 5px 15px;
+}
+
+.card-img-top {
+	width: 568px;
+  height: 350px;
+  object-fit: cover;
 }
 
 .container-fluid {
