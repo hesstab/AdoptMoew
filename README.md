@@ -87,5 +87,5 @@ heroku logs --tail
 
 ## Roadmap for future development
 
-- Messaging system: For users to directly message the owners about their listed cats
+- Messaging system (WIP): For users to directly message the owners about their listed cats
 - UI improvements
