@@ -2,18 +2,32 @@
 
 <div class="card">
 
-  <%= image_tag @listing.photo, :class => 'feature' if @listing.photo.attached?%>
+<% if @listing.photo.attached? %>  
+  <%= image_tag @listing.photo, :class => 'feature' %>
+<% else %>
+  <%= image_tag 'avatar_placeholder.png', :class => 'feature' %>
+<% end %>
 
   <div class="card-body">
     <ul class="cat-info-lists">
       <% if @listing.age.present? %>
         <li>Age: <%= @listing.age %> months</li>
       <% end %>
-      <li>Gender: <%= @listing.gender %></li>
-      <li>Breed: <%= @listing.breed %></li>
-      <li>Color: <%= @listing.color %></li>
-      <li>Microchipped: <% if @listing.microchipped %>&#9989;<% end %></li>
-      <li>Desexed: <% if @listing.desexed %>&#9989;<% end %></li>
+      <% if @listing.gender.present? %>
+        <li>Gender: <%= @listing.gender %></li>
+      <% end %>
+      <% if @listing.breed.present? %>
+        <li>Breed: <%= @listing.breed %></li>
+      <% end %>
+      <% if @listing.color.present? %>
+        <li>Color: <%= @listing.color %></li>
+      <% end %>
+      <% if @listing.microchipped.present? %>
+        <li>Microchipped: &#9989; </li>
+      <% end %>
+      <% if @listing.desexed.present? %>
+        <li>Desexed: &#9989; </li>
+      <% end %>
       <li>Owner: <%= link_to @listing.user.name, user_path(@listing.user) %></li>
     </ul>
   </div>
